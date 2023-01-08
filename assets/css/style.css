@@ -1,0 +1,364 @@
+.topHeader{
+    display: block;
+    position: sticky;
+    width:100%;
+    height: 18vh;
+    top: 0;
+    background-color:#313c55;
+}
+/* Style form isEven*/
+.isEven{
+    display: flex;
+    gap:1rem;
+    margin:1rem;
+    padding: 1rem 2rem;
+}
+.tableMonster{
+    width:100%;
+    border:thin solid #000;
+    border-radius:8px;
+}
+.tableHeader{
+    width:100%;
+    background-color: #e9e7e7;
+    border:thin solid #000;
+    border-radius:8px;
+    padding: .2rem .5rem;
+    font-size: 1.5rem;
+}
+.imageBox{
+    width: 20%;
+    margin:0;
+    padding:0;
+}
+.imgMonster{
+    max-width: 100%;
+    margin:auto;
+}
+.tableTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:rgb(20, 104, 177);
+    text-align: center;
+}
+.tableDesc{
+    font-size: 1.25rem;
+}
+.action{
+    width:10%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:rgb(20, 104, 177);
+    text-align: center;
+}
+.modify{
+    width:fit-content;
+    aspect-ratio: 200/80;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border:thin solid #000;
+    border-radius:5px;
+    padding: .8rem 1rem;
+    background-color: rgb(201, 182, 36);
+    color:#fff;
+}
+.delete{
+    width:fit-content;
+    aspect-ratio: 200/80;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border:thin solid #000;
+    border-radius:5px;
+    padding: .8rem 1rem;
+    background-color: rgb(179, 19, 19);
+    color:#fff;
+}
+.adder{
+    width:fit-content;
+    aspect-ratio: 200/80;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border:thin solid #000;
+    border-radius:5px;
+    padding: .8rem 1rem;
+    background-color: rgb(72, 167, 17);
+    color:#fff;
+    margin:.8rem auto;
+}
+.modify:hover{
+    background-color: rgb(240, 227, 125);
+    color:#000;
+    box-shadow: #00000050 0 0 10px;
+}
+.delete:hover{
+    background-color: rgb(249, 111, 111);
+    color:#000;
+    box-shadow: #00000050 0 0 10px;
+}
+.adder:hover{
+    background-color: rgb(140, 210, 100);
+    color:#000;
+    box-shadow: #00000050 0 0 10px;
+}
+.modify:active{
+    background-color: rgb(148, 133, 21);
+    color:#fff;
+    box-shadow: inset #00000080 0 0 5px;
+}
+.delete:active{
+    background-color: rgb(143, 22, 22);
+    color:#fff;
+    box-shadow: inset #00000080 0 0 5px;
+}
+.adder:active{
+    background-color: rgb(53, 113, 18);
+    color:#fff;
+    box-shadow: inset #00000080 0 0 5px;
+}
+.tableBox{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 1px solid #000;
+    margin:0;
+}
+.tableFooter{
+    width:100%;
+    min-height: fit-content;
+    height:3.5rem;
+}
+.footerBox{
+    padding:1rem;
+}
+.sectionArticles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin:3rem auto;
+    padding:2rem;
+    gap:1rem;
+    max-width: 80%;
+    background-color: #e9e7e7;
+    box-shadow: #00000050 0 0 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    gap:1rem;
+    box-shadow: #00000050 0 0 10px;
+    padding:.75rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+
+}
+.actionsContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e9e7e7;
+    padding:1rem;
+    border-radius: 8px;
+}
+/* navigation*/
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navUl{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:1rem;
+    gap:1rem;
+    list-style: none;
+}
+.navBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d3082;
+    font-size: 2rem;
+    padding: .8rem 1rem;
+    border-radius: 8px;
+    border: solid 1px  #7d9de8;
+}
+.navBtn > a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.navBtn:hover > a{
+    color: #000000;
+    text-decoration: none;
+}
+.navBtn:hover{
+    background-color: #7d9de8;
+    border: solid 1px  #0d3082;
+}
+/* Formulaires */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    max-width: 80%;
+}
+.inputGroup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:2rem;
+}
+.inputGroup > input,
+.inputGroup > textarea{
+    justify-content: flex-end;
+}
+/* Style page exercices php */
+.sectionExercicesPhp{
+    border: solid 2px #000;
+    margin-bottom: 2rem; 
+    background-color:#ececec;
+    padding: 2rem 5rem;
+}
+.h2ExercicesPhp{
+   padding:.5rem .8rem;
+   background-color:#333;
+   color:#e4e4e4;
+   text-transform:uppercase;
+   margin:1rem auto;
+   text-align:center; 
+}
+pre{
+    border: 2px solid yellow;
+    border-radius:5px;
+    background:#222;color:#fff;
+    padding:2rem 5rem 2rem 1rem;
+    width:max-content;
+}
+.balisePreExercicesPhp{
+    border: 2px solid yellow; 
+    border-radius:5px;
+    background:#222;
+    color:#fff;
+    padding:2rem 5rem 2rem 1rem;
+    width:max-content;
+}
+.pExercicePhpExo10{
+    line-height:.5rem; 
+}
+.spanExercicePhpExo10{
+    padding:.2rem .5rem; 
+    color:#fff;
+    font-weight:bold; 
+}
+.spanExercicePhpExo10#value5et3{
+    background-color:purple;
+}
+.spanExercicePhpExo10#value5{
+    background-color:blue;
+}
+.spanExercicePhpExo10#value3{
+    background-color:red;
+}
+
+.tableExoPhp{
+    border:1px;
+    border-style:solid;
+    border-color:green;
+    border-radius:8px; 
+}
+.tableHeadExoPhp{
+    background-color:#c5c5c5;
+}
+.tableHeadTdLeftExoPhp{
+    padding:.8rem;
+    border-top-left-radius:8px;
+}
+.tableHeadTdRightExoPhp{
+    font-weight:bold;
+    padding:.8rem;
+    border-top-right-radius:8px;
+}
+.tableExoPhpTd1{
+    border:1px;
+    border-style:solid;
+    border-color:black;
+    padding:.5rem;
+    text-align:center; 
+}
+.tableExoPhpTd2{
+    border:1px;
+    border-style:solid;
+    border-color:black;
+    padding:.5rem;
+    text-align:center;
+}
+/* Style tableau multiplication */
+.tableExoPhpTdM1{
+    border:.5px;
+    border-style:solid;
+    border-color:black;
+    padding:.5rem;
+    text-align:center;
+    min-width:2rem;
+    margin:0;
+}
+.tableExoPhpTdMkey{
+    border:1px;
+    border-style:solid;
+    border-color:black;
+    padding:.5rem;
+    text-align:center;
+    width:1rem;
+    background-color:#c5c5c5;
+    margin:0;
+}
+.bold{
+    font-weight:bold;
+}
+tfoot > tr{
+    background-color:#ffffff;
+}
+tfoot > tr > td{
+    padding:.8rem;
+}
+/* Style formulaire pythagore */
+.pythagore{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding:1rem; */
+    gap:2rem;
+}
+.pythagoreForm{
+    min-width:80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap:1rem;
+    border:solid .5px rgb(158, 158, 158);
+    padding:1rem;
+    margin: 1rem auto;
+}
+.pythagoreForm > .inputGroup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap:1rem;
+    margin: auto;
+}
+.pythagoreForm > button{
+    margin: auto;
+}
+.result{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    border:solid .5px rgb(158, 158, 158);
+    padding:1rem;
+}
+.resutltString{
+    display:inline-block;
+}
