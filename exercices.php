@@ -221,7 +221,8 @@ include('functions.php');
                         <label for="hypotenus">Longueur de l’hypoténuse</label>
                         <input type="number" name="hypotenuseSide" id="hypotenus" placeholder="laisser vide l'inconnue">
                     </div>
-                    <button>Chercher la valeur manquante</button></form>
+                    <button>Chercher la valeur manquante</button>
+                </form>
                 <div class="result">
 
                     <?php

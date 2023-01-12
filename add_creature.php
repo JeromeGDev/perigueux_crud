@@ -14,17 +14,24 @@ if (isset($_POST['name']) && isset($_POST['descriptionInForm'])){
         //Nom Temporaire du fichier image dans une variable
         $imageTmp = $_FILES['imageUploaded']['tmp_name'];
 
+        $infoImage = pathinfo($image);
+
+        $extImage = $infoImage["extension"];
+        $imageName = $infoImage["filename"];
+
+        $filename = $imageName . "." .time() . rand(1,1000). "." . $infoImage["extension"];
+
         move_uploaded_file($imageTmp, './assets/img/' .$image);
     }
 
 
     //var_dump($_FILES['imageUploaded']);
 
-    $requestadd = $bdd -> prepare('INSERT INTO monster(monster_name, description, image)
-                                    VALUES( ? , ? , ? )');
+    $requestadd = $bdd -> prepare('INSERT INTO monster(monster_name, description, image, user_id)
+                                    VALUES( ? , ? , ? , ? )');
 
     //SOIT
-    $requestadd -> execute(array($name , $description , $image));
+    $requestadd -> execute(array($name , $description , $image, $sessionUserId));
     // OU BIEN - qui est plus précis et lisible:
     // $request = $bdd -> prepare('INSERT INTO monster(monster_name, description, image)
     //                      VALUES(:monster_name = monster_name, :description = description , :image = image
@@ -53,6 +60,10 @@ if (isset($_POST['name']) && isset($_POST['descriptionInForm'])){
 </head>
 <body>
 <?php include('header.php'); ?>
+<?php if (isset($sessionUserName)){ ?>
+    <h2> <?= $sessionUserName ?> Cette page vous permet d'ajouter une creature</h2>
+
+
     <main>
         
         <h1>Ajouter une creature</h1>
@@ -79,6 +90,10 @@ if (isset($_POST['name']) && isset($_POST['descriptionInForm'])){
             <td><button>Valider</button></td>
             
         </form>
+        <?php } else{ ?>
+            <p> Vous devez être identifié pour accéder au formulaire d'ajout de créature</p>
+        
+        <?php }?>
     </main>
 </body>
 </html>

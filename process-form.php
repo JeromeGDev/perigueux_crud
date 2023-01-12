@@ -35,7 +35,7 @@ if ( $_FILES["imageUploaded"]["error"] !== UPLOAD_ERR_OK ) {
 }
 
 // pour limiter la taille des fichiers téléchargés
-if ( $_FILES["imageUploaded"]["size"] > 1048576 ){ // 1045876 = 1Mb
+if ( $_FILES["imageUploaded"]["size"] > 6048576 ){ // 1045876 = 1Mb
     exit( "The uploaded file exceeds the upload_max_filesize directive that was specified in the HTMLform" );
 }
 
@@ -61,10 +61,13 @@ if ( !in_array($_FILES["imageUploaded"]["type"], $mime_type) ){
 /// Sécuriser : Etape 1 spliter le $_FILES["imageUploaded"]["name"]
 $pathinfo = pathinfo( $_FILES["imageUploaded"]["name"] ); // split le filename en plusieurs parties
 $base = $pathinfo["filename"]; // renvoie le nom du fichier sans son extension
-$base = preg_replace( "/[^\w]/" , "_" , $base); // remplace tous les caractères non alphanumériques par un _
-$filename = $base . "." . $pathinfo["extension"];
+//$base = preg_replace( "/[^\w]/" , "_" , $base); // remplace tous les caractères non alphanumériques par un _ // OU VOIR EN BAS DEPAGE POUR CREER UN NOM UNIQUE
+
+$filename = $base. "." .time() . rand(1,1000). "." . $pathinfo["extension"];
 // récupération du répertoire de destination dans une variable
 $destination = __DIR__ . "/assets/img/" . $filename;
+
+$filename = $base . "." . $pathinfo["extension"];
 // déplacement du fichier du dossier temporaire dans le dossier de destination
 /* ATTENTION : il convient de vérifier que le dossier de destination finale est autorisé en écriture sur le serveur (chmod) & php*/
 // Il faut prendre en compte que si le nom du fichier existe déjà, le nouveau fichier téléchargé remplacera celui existant
@@ -74,15 +77,19 @@ $destination = __DIR__ . "/assets/img/" . $filename;
 };*/
 
 // Rendre le nom unique (exemple d'une méthode - d'autres peuvent être applicables)
-$i=1;
-// créons une boucle qui vérifie sir le nom de destination existe
-while(file_exists($destination)){
-    // on le rend unique en ajoutant le $i
-    $filename = $base . "($i)." . $pathinfo["extension"];
-    // on défini de nouveau le répertoire de destination et le nom
-    $destination = __DIR__ . "/assets/img/" . $filename;
-    // puis on incrémente la valeur de $i pour que le fichier suivant qui aura le même nom ai un autre index
-    $i++;
-}
+// $i=1;
+// // créons une boucle qui vérifie sir le nom de destination existe
+// while(file_exists($destination)){
+//     // on le rend unique en ajoutant le $i
+//     $filename = $base . "($i)." . $pathinfo["extension"];
+//     // on défini de nouveau le répertoire de destination et le nom
+//     $destination = __DIR__ . "/assets/img/" . $filename;
+//     // puis on incrémente la valeur de $i pour que le fichier suivant qui aura le même nom ai un autre index
+//     $i++;
+// }
 // Affiche le message sans redirection : echo ("File uploaded with success");
-header('Location: creatures.php.success=1'); // le message de succès est affiché sur la page d'arrivé grâce au ?success=1
+header('Location: creatures.php?success=1'); // le message de succès est affiché sur la page d'arrivé grâce au ?success=1
+
+// ======================= AUTRE METHODE POUR NOM UNIQUE
+
+

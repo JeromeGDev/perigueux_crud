@@ -87,3 +87,13 @@ function getUrl($url){
     // Afficher l'URL
     return $url;
 }
+
+function logout(){
+    if(!$userId){
+        header('Location:index.php');
+    } else {
+        session_start();
+        session_destroy();
+        header('Location:index.php');
+    }
+}

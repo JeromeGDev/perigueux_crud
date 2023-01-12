@@ -24,7 +24,7 @@
     border:thin solid #000;
     border-radius:8px;
     padding: .2rem .5rem;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 .imageBox{
     width: 20%;
@@ -42,11 +42,11 @@
     text-align: center;
 }
 .tableDesc{
-    font-size: 1.25rem;
+    font-size: 1.25em;
 }
 .action{
     width:10%;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: bold;
     color:rgb(20, 104, 177);
     text-align: center;
@@ -54,7 +54,7 @@
 .modify{
     width:fit-content;
     aspect-ratio: 200/80;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: bold;
     border:thin solid #000;
     border-radius:5px;
@@ -65,7 +65,7 @@
 .delete{
     width:fit-content;
     aspect-ratio: 200/80;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: bold;
     border:thin solid #000;
     border-radius:5px;
@@ -179,7 +179,7 @@ nav{
     justify-content: center;
     align-items: center;
     background-color: #0d3082;
-    font-size: 2rem;
+    font-size: 1em;
     padding: .8rem 1rem;
     border-radius: 8px;
     border: solid 1px  #7d9de8;
@@ -214,6 +214,9 @@ form{
 .inputGroup > input,
 .inputGroup > textarea{
     justify-content: flex-end;
+}
+form > button{
+    margin:auto;
 }
 /* Style page exercices php */
 .sectionExercicesPhp{
